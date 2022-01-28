@@ -1,0 +1,293 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/* BELOW 1360px (Smaller desktops) */
+
+@media (max-width: 85em) {
+  .gallery-item img {
+    width: 100%;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials {
+    padding: 4rem 0 8rem 4rem;
+  }
+}
+
+/* BELOW 1200px (Landscape Tablets) */
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .testimonials {
+    padding: 6rem 0 8rem 9rem;
+  }
+
+  .container {
+    max-width: 100rem;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 35px;
+  }
+}
+
+/* BELOW 944px (Tablets) */
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    max-width: 90rem;
+  }
+
+  .testimonials {
+    padding: 6rem 0 9rem 10rem;
+  }
+
+  .btn--close-modal {
+    margin-right: -43rem;
+  }
+
+  .service-icon {
+    margin-bottom: 1rem;
+  }
+
+  .main-nav-links li:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 25px;
+    margin-top: 0.2rem;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  .main-nav {
+    background-color: rgb(0, 0, 0, 0.8);
+    /* -webkit-backdrop-filter: blur(10px); */
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 107vh;
+    transform: translateX(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    opacity: 0;
+
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-links {
+    flex-direction: column;
+    gap: 4.8rem;
+    align-items: center;
+  }
+
+  /* .icon-mobile-nav {
+    margin-right: -3rem;
+  } */
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .header {
+    padding: 2rem 1rem 2rem 1.7rem;
+  }
+}
+
+/* BELOW 816px (Smaller tablets) */
+
+@media (max-width: 51em) {
+  .container {
+    max-width: 70rem;
+  }
+
+  .image-box img {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .testimonies {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    padding: 7rem 9rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 4rem;
+  }
+}
+
+/* BELOW 656px (Phones) */
+
+@media (max-width: 41em) {
+  .container {
+    max-width: 40rem;
+  }
+
+  .image-box:nth-child(4) {
+    grid-row: 3;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+  .gallery-item img {
+    height: 10rem;
+  }
+
+  .modal {
+    padding: 2rem 0rem 5rem 0rem;
+  }
+
+  .btn--close-modal {
+    margin-right: -35rem;
+  }
+
+  .welcome-heading {
+    font-size: 2.8rem;
+  }
+
+  .text-heading {
+    margin-bottom: 0.8rem;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7rem;
+  }
+
+  .testimonials {
+    padding: 0rem;
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* .logo-header {
+    margin-left: -2rem;
+  } */
+
+  .prices {
+    display: grid;
+    gap: 6rem;
+  }
+
+  .register {
+    align-self: center;
+    margin-top: 1.5rem;
+    justify-self: center;
+  }
+  .prices div:not(:last-child) {
+    margin-right: 0rem;
+  }
+
+  .price-lists {
+    display: grid;
+    gap: 2.6rem;
+  }
+
+  .price-list {
+    gap: 0;
+  }
+
+  .price-list-icon {
+    margin-right: 1.5rem;
+  }
+
+  .price--list-icon {
+    margin-right: 1.5rem;
+  }
+
+  .price-1 {
+    padding: 11.8rem;
+  }
+
+  .price {
+    margin-bottom: 3rem;
+  }
+
+  .price-2 {
+    padding: 11.8rem;
+  }
+
+  .price-list-head {
+    margin-bottom: 3rem;
+  }
+
+  .price-2::after {
+    top: 3%;
+    right: -19%;
+  }
+
+  .footer {
+    display: grid;
+    gap: 3.5rem;
+  }
+
+  .footer-header {
+    margin-bottom: 1.3rem;
+  }
+}
+
+/* flexbox gap bug in safari */
+
+/**************************/
+/* Fixing Safari flexbox gap */
+/**************************/
+
+.no-flexbox-gap .footer-contact-list li:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.no-flexbox-gap .footer-social-list li:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-links li:not(:last-child) {
+    margin-bottom: 4.8rem;
+    margin-right: 0;
+  }
+}
