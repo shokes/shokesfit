@@ -5,7 +5,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btncloseModal = document.querySelector(".btn--close-modal");
 const mainNavLinks = document.querySelector(".main-nav-links");
-const logo = document.querySelector(".logo");
+const logo = document.querySelector(".logo-name");
 const sectionWelcome = document.querySelector(".section-welcome");
 const header = document.querySelector(".header");
 const navLink = document.querySelectorAll(".main-nav-link");
@@ -59,7 +59,7 @@ const opacity = function (e) {
     const siblings = link
       .closest(".main-nav-links")
       .querySelectorAll(".main-nav-link");
-
+    // console.log(siblings);
     siblings.forEach((el) => {
       if (el !== link) {
         el.style.opacity = this;
